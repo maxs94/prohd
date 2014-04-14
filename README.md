@@ -1,16 +1,17 @@
-Disclaimer *IMPORTANT*
+Disclaimer
 
-    Code is provided as is.
-    If you want to try to setup your own instance, I would advice that you have an understanding of PHP, MySQL, and general code architecture. 
-	
+	Code is provided as is.
+
+	If you want to try to setup your own instance, I would advice that you have an understanding of PHP, MySQL, and general code architecture. 
+
 	Getting this to run is not a beginner project.
-    
+
 	I cannot provide any commitment for bugs corrections, adding features, or providing support.
-    
+
 	There are many, many non-sanitized input points that are major security issues as noted in this post. I would not use this as a public-facing site.
-    
+
 	There are unfinished pages, hacked together solutions, code in the view, display code in the controllers, etc. Don't expect clean, production quality code.
-    
+
 	Be prepared to edit the database table to enter your users and API keys. The .admin. section is only partially completed.
 
 Prerequisites
@@ -57,4 +58,5 @@ Recommendations
 If you are intimated by the scope of the setup procedure, I would recommend that you use the DRK Industry Tracker for your construction projects as my partner Raath is actively developing this project.
 
 Bitcoin Donations
+
 12SFN3WgXofnT6JvRQN3GsSAB7XKTkshkZ
