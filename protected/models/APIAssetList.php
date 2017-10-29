@@ -42,15 +42,16 @@ class APIAssetList extends EVEXMLData
 				$locationName = $this->getLocationName($item->attributes()->locationID);
 			}
 			$invType = Invtypes::Model()->findByPk($item->attributes()->typeID);
+
 			
 			$asset = new Assets;
 			$asset->characterID = $characterID;
 			$asset->itemID = $item->attributes()->itemID;
 			$asset->locationID = $item->attributes()->locationID;
-			$asset->typeID = $item->attributes()->typeID;
-			$asset->quantity = $item->attributes()->quantity;
-			$asset->flag = $item->attributes()->flag;
-			$asset->singleton = $item->attributes()->singleton;
+			$asset->typeID = (int) $item->attributes()->typeID;
+			$asset->quantity = (int) $item->attributes()->quantity;
+			$asset->flag = (int) $item->attributes()->flag;
+			$asset->singleton = (int) $item->attributes()->singleton;
 			$asset->containerID = $containerID;
 			$asset->locationName = $locationName;
 			$asset->typeName = $invType->typeName;

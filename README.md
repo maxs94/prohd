@@ -18,6 +18,12 @@ Prerequisites
     MySQL, PHP5+
     phpMyAdmin or an easy way to modify tables
 
+Known Bugs/Issues
+
+ 	* As eve-central.com is down there is no market price information (yet). Working on that.
+	
+	
+	
 Installation
 
 1. Download the latest code from https://github.com/maxs94/prohd

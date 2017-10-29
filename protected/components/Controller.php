@@ -21,14 +21,27 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 	
-	public function getEveTime()
+	/*
+	** get server timezone and time 
+	** convert to UTC (which the same as EVE time)
+	** returns a unix timestamp
+	*/
+	public function getEveTime($format="U")
 	{
-		return strtotime("+5 hour");
+		
+		$date = date("Y-m-d H:i:s");		// local server time 
+		$serverzone = date_default_timezone_get();
+		$dateobj = new DateTime($date, new DateTimeZone($serverzone));
+		
+		$dateobj->setTimezone(new DateTimeZone("UTC"));		// convert to UTC 
+		
+		return $dateobj->format($format);
+		
 	}
 	
 	public function getEveTimeSql()
 	{
-		$time = strtotime("+5 hour");
+		$time = $this->getEveTime();
 		$datetime = date( 'Y-m-d H:i:s', $time );
 
 		return $datetime;

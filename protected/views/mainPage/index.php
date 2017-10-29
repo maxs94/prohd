@@ -186,7 +186,8 @@ foreach ($revProfit as $row)
 
 				$dateEnd = $row->endProductionTime;
 				$dateBegin = $row->beginProductionTime;
-				$dateNow = date('Y-m-d H:i:s', strtotime("+4 hour"));
+				//$dateNow = date('Y-m-d H:i:s', strtotime("+4 hour"));
+				$dateNow = date('Y-m-d H:i:s', $this->getEveTime());
 				
 				$diff = 100 - ((strtotime($dateEnd) - strtotime($dateNow)) / (strtotime($dateEnd) - strtotime($dateBegin))) * 100;
 				$diff = number_format($diff, 1, '.', '');

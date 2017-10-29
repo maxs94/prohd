@@ -158,7 +158,7 @@
 				array('label'=>'logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
 		));
-		echo "<div class='evetime'>".date('H:i n/j', strtotime("+4 hour")).' EVE</div>';
+		echo "<div class='evetime'>". $this->getEveTime("H:i").' EVE TIME</div>';
 		?>
 		</div>
 		<div style="clear: both;"></div>
@@ -172,6 +172,8 @@
 
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> PROHD. All Rights Reserved. Fork by <a href="https://github.com/maxs94/prohd/" target="_blank">maxs94</a>
+		|
+		Local server timezone: <?php echo date_default_timezone_get(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->
