@@ -171,7 +171,7 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> PROHD. All Rights Reserved.
+		Copyright &copy; <?php echo date('Y'); ?> PROHD. All Rights Reserved. Fork by <a href="https://github.com/maxs94/prohd/" target="_blank">maxs94</a>
 	</div><!-- footer -->
 
 </div><!-- page -->

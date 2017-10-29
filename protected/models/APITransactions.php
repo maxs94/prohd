@@ -22,6 +22,8 @@ class APITransactions extends EVEXMLData
 		//Retrieve the XML dataset
 		$transactions = $this->getEVEData($walletID);
 		
+		Yii::log(print_r($transactions,true));
+		
 		$character = Characters::Model()->findByPk($walletID);
 		
 		if(!(isset($transactions->error)))
@@ -45,13 +47,14 @@ class APITransactions extends EVEXMLData
 				{
 					if($row[$i]->attributes()->transactionFor == "personal")
 					{
+						
 						$orderRow = new Wallet;
 						$orderRow->transactionDateTime = $row[$i]->attributes()->transactionDateTime;
 						$orderRow->transactionID = $row[$i]->attributes()->transactionID;
 						$orderRow->quantity = $row[$i]->attributes()->quantity;
 						$orderRow->typeName = $row[$i]->attributes()->typeName;
 						$orderRow->typeID = $row[$i]->attributes()->typeID;
-						$orderRow->price = $row[$i]->attributes()->price;
+						$orderRow->price = (double) $row[$i]->attributes()->price;
 						$orderRow->clientID = $row[$i]->attributes()->clientID;
 						$orderRow->clientName = $row[$i]->attributes()->clientName;
 						$orderRow->stationID = $row[$i]->attributes()->stationID;
@@ -78,7 +81,10 @@ class APITransactions extends EVEXMLData
 						}
 						
 						$orderRow->save();
-                                                print_r($orderRow->getErrors());
+                         //print_r($orderRow->getErrors());
+						 if (count($orderRow->getErrors()) > 0) Yii::log(print_r($orderRow->getErrors(), true), "warning", "APITransactions");
+						 
+						 
 					}
 				}
 			}

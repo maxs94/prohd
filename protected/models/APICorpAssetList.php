@@ -56,6 +56,8 @@ class APICorpAssetList extends EVEXMLData
                         {
                             $e->getMessage();
                         }
+						
+			if (count($asset->getErrors()) > 0) Yii::log(print_r($asset->getErrors(), true), "warning", "APICorpAssetList");
 		}
 	}
 	

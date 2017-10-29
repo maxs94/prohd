@@ -7,7 +7,7 @@ $group = $this->getDefaultTrackingGroup(Yii::app()->user->trackingGroupID);
 $groupMembers = $this->getTrackingGroupMembers($group->trackingGroupID);
 
 foreach ($groupMembers as $member)
-{
+{
 	$orderInterface->getEveData($member->characterID);
 	$character = Characters::Model()->findByPk($member->characterID);
 	if ($character->ordersEnabled)

@@ -25,6 +25,9 @@ class APIConqStations extends EVEXMLData
 			$apistation->corporationID = $station->attributes()->corporationID;
 			$apistation->corporationName = $station->attributes()->corporationName;
 			$apistation->save();
+			
+			if (count($apistation->getErrors()) > 0) Yii::log(print_r($apistation->getErrors(), true), "warning", "APIConqStations");
+			
 		}
 	}
 }

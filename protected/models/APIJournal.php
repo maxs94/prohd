@@ -52,11 +52,11 @@ class APIJournal extends EVEXMLData
 					$orderRow->ownerID2 = $row->attributes()->ownerID2;
 					$orderRow->argName1 = $row->attributes()->argName1;
 					$orderRow->argID1 = $row->attributes()->argID1;
-					$orderRow->amount = $row->attributes()->amount;
-					$orderRow->balance = $row->attributes()->balance;
+					$orderRow->amount = (double) $row->attributes()->amount;
+					$orderRow->balance = (double) $row->attributes()->balance;
 					$orderRow->reason = $row->attributes()->reason;
 					$orderRow->characterID = $walletID;
-					$orderRow->save();
+					$orderRow->save();										if (count($orderRow->getErrors()) > 0) Yii::log(print_r($orderRow->getErrors(), true), "warning", "APIJournal");
 				}
 			}
 		}

@@ -49,6 +49,10 @@ Installation
 
 9.  Go to "Admin" in the top menu and change the admin's account password!
 
-10.  Modify your API-Key in the Character's section, leave the Character ID at "1"!
+10.  Modify your API-Key in the Character's section:
+		Add your Character ID (you can get it here: https://api.eveonline.com/eve/CharacterID.xml.aspx?names=YOUR_CHARACTER_NAME)
+		Add your Character Name 
+		Add your Key ID and vCode (get it here: https://community.eveonline.com/support/api-key/)
+			(Tick all at "Account and Market", "Public Information" and "Private Information" )
 
-11. Done. 
+11. Done.

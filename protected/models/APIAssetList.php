@@ -67,6 +67,9 @@ class APIAssetList extends EVEXMLData
                             //$message = $e->getMessage();
                             //echo "Exception: $message <br>";
                         }
+			
+			if (count($asset->getErrors()) > 0) Yii::log(print_r($asset->getErrors(), true), "warning", "APIAssetList");
+			
 		}
 	}
         

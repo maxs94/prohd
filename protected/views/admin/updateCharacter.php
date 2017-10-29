@@ -11,7 +11,11 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'characterID'); ?>
-		<?php echo $form->textField($model,'characterID'); ?>
+		<?php echo $form->textField($model,'characterID');  ?>
+			
+			Please provide your characterID, you can use the following link:<br>
+			https://api.eveonline.com/eve/CharacterID.xml.aspx?names=YOUR_CHARACTER_NAME
+			<br><br>
 		<?php echo $form->error($model,'characterID'); ?>
 	</div>
 
