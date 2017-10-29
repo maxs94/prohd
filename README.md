@@ -37,6 +37,7 @@ Installation
 4. Create database structure with prohd.sql
 
 5. Import the Eve static data tables from https://www.fuzzwork.co.uk/dump/
+
 5.1 use latest dump: https://www.fuzzwork.co.uk/dump/mysql-latest.tar.bz2
 
 6. Generate the following table for typeBuildReqs for Tech 2 items. 
@@ -44,8 +45,11 @@ Installation
 	for MS SQL Server: (http://pastebin.com/6hypXsrS) 
 	
 7. Point your browser to the install location - it should come up with a page telling you that it has created a new username.
+
 7.1 Refresh the page and login with username "admin" and password "password".
+
 7.2 Go to "Admin" in the top menu and change the admin's account password!
+
 7.3 Modify the your API-Key in the Character's section, leave the Character ID at "1"!
 
 8. Done. 
