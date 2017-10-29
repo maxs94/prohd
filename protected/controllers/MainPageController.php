@@ -3,6 +3,7 @@
 class MainPageController extends Controller
 {
 
+
 	/**
 	* This is the main action of the dashboard
 	* This method is used by the 'accessControl' filter.

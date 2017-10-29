@@ -85,8 +85,6 @@ abstract class EVEXMLData extends CModel
 	public function getCacheExpiration($characterID)
 	{
 		
-		if (empty($characterID)) echo "getCacheExpiration: No characterID defined";
-		
 		//Get the API model attributes
 		$attributes = $this->apiAttributes();
 		

@@ -2,6 +2,65 @@
 
 class SiteController extends Controller
 {
+	
+	/*
+	** maxs94: check database for tables and eve static 
+	*/
+	public function check_db() {
+		
+	//	print_r(Yii::app()->db->schema->getTables());
+		
+		// check for prohd tables 
+		$exists = Yii::app()->db->schema->getTable('accounts', true);
+		
+		if ($exists == null) die("(database) please import prohd.sql database dump into your database.");
+		
+		// check for eve static tables 
+		$exists = Yii::app()->db->schema->getTable('invTypes', true);
+		if ($exists == null) {
+			echo "(database) Please import EVE's static database dump into your database.<br>";
+			echo "You can grab a copy from Fuzzwork (<a href=\"https://www.fuzzwork.co.uk/dump/mysql-latest.tar.bz2\" target=\"_blank\">here</a>)";
+			die();
+		}
+		
+		// check if an account is set up 
+		$q = "SELECT * FROM accounts";
+		$results = Yii::app()->db->createCommand($q)->queryAll();
+		
+		if (count($results) == 0) {
+			// initial setup 
+			
+			$qs[] = "DELETE FROM accounts";
+			$qs[] = "DELETE FROM apiStatus";
+			$qs[] = "DELETE FROM trackingGroups";
+			$qs[] = "DELETE FROM characters";
+			$qs[] = "DELETE FROM trackingGroupMembers";
+			
+			$qs[] = "INSERT INTO accounts VALUES (1, 'admin', md5('password'), '', 1, 1, 'Admin')";
+			$qs[] = "INSERT INTO apiStatus VALUES (1,1)";
+			$qs[] = "INSERT INTO trackingGroups VALUES ('Main Group', 1, 1)";
+			$qs[] = "INSERT INTO trackingGroupMembers VALUES (1, 1, 1)";
+			$qs[] = "INSERT INTO characters VALUES (1, 1, 'Please change', 0, 'API vcode - please change', 1, 0, NOW(), 1, 1, 1, 1, 1, 0)";
+			
+			
+			foreach ($qs as $q) {
+					Yii::app()->db->createCommand($q)->query();
+			}
+			
+			
+			
+			
+			
+			echo '<H1>Setup complete</H1>';
+			echo 'Created user "admin" with password "password". Please refresh this page to login.<br>';
+			echo 'After logging in, please make sure to change the password of the admin user and to add your admin keys.';
+			die();
+		}
+		
+		
+	}
+	
+	
 	/**
 	 * Declares class-based actions.
 	 */
@@ -67,10 +126,14 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * Displays the login page
+	 * Displays the login page 
+	 * maxs94: checks the database structure
 	 */
 	public function actionLogin()
 	{
+		
+		$this->check_db();
+		
 		$model=new LoginForm;
 
 		// if it is ajax validation request
