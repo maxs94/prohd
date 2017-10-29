@@ -49,6 +49,6 @@ Installation
 
 9.  Go to "Admin" in the top menu and change the admin's account password!
 
-10.  Modify the your API-Key in the Character's section, leave the Character ID at "1"!
+10.  Modify your API-Key in the Character's section, leave the Character ID at "1"!
 
 11. Done. 
