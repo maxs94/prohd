@@ -57,6 +57,3 @@ Recommendations
 
 If you are intimated by the scope of the setup procedure, I would recommend that you use the DRK Industry Tracker for your construction projects as my partner Raath is actively developing this project.
 
-Bitcoin Donations
-
-12SFN3WgXofnT6JvRQN3GsSAB7XKTkshkZ
