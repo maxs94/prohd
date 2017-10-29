@@ -85,7 +85,9 @@ class Controller extends CController
 	
 	public function getDefaultTrackingGroup()
 	{
+			
 		$group = TrackingGroups::Model()->findByPk(Yii::app()->user->trackingGroupID);
+		
 		return $group;
 	}
 	
@@ -98,6 +100,7 @@ class Controller extends CController
 	
 	public function getAllTrackingGroups()
 	{
+		
 		$groups = TrackingGroups::Model()->findAll();
 		return $groups;
 	}

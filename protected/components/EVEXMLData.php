@@ -84,10 +84,15 @@ abstract class EVEXMLData extends CModel
 	//Returns the number of seconds remaining on the cache timer
 	public function getCacheExpiration($characterID)
 	{
+		
+		if (empty($characterID)) echo "getCacheExpiration: No characterID defined";
+		
 		//Get the API model attributes
 		$attributes = $this->apiAttributes();
+		
 		//Get the character information from the db
 		$character = Characters::model()->findByPk($characterID);
+		
 		
 		//Create the full cacheID and check the cache
 		$fullCacheID = $attributes['cacheID'] . $character->getAttribute($attributes['primaryID']);

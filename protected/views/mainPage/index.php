@@ -400,6 +400,4 @@ foreach ($revProfit as $row)
 		
 		
 		
-		
-		
 </div>
