@@ -43,3 +43,9 @@ Installation
 	for MySQL: /build_t2.sql 
 	for MS SQL Server: (http://pastebin.com/6hypXsrS) 
 	
+7. Point your browser to the install location - it should come up with a page telling you that it has created a new username.
+7.1 Refresh the page and login with username "admin" and password "password".
+7.2 Go to "Admin" in the top menu and change the admin's account password!
+7.3 Modify the your API-Key in the Character's section, leave the Character ID at "1"!
+
+8. Done. 
